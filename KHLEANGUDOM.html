@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up  Application Form KHLEANGUDOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 650px;
+            margin: 30px auto;
+            background-color: #1f2333;
+            color: yellow;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            background-color: orange;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 12px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        td {
+            padding: 8px 12px;
+            vertical-align: middle;
+        }
+
+        td.label {
+            text-align: right;
+            font-weight: bold;
+            color: #ffffff;
+            width: 35%;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        select {
+            width: 90%;
+            padding: 7px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            color: white;
+        }
+
+        .gender-group {
+            color: white;
+        }
+
+        .terms-cell {
+            color: white;
+            text-align: center;
+        }
+
+        .btn-area {
+            background-color: orange;
+            text-align: center;
+            padding: 12px;
+        }
+
+        button, input[type="submit"], input[type="reset"] {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+
+        .submit {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .cancel {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        footer {
+            background-color: #151824;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+            line-height: 1.6;
+            border-top: 1px solid #333;
+        }
+
+        footer strong {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="header">Sign Up  Application Form</div>
+
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <table>
+                <!-- Personal Information -->
+                <tr>
+                    <td class="label"><label for="fname">First Name:</label></td>
+                    <td><input type="text" id="fname" name="firstname" placeholder="Enter First Name...(EX:KHLEANG)"></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="lname">Last Name:</label></td>
+                    <td><input type="text" id="lname" name="lastname" placeholder="Enter Last Name...(EX:UDOM)"></td>
+                </tr>
+
+                <tr>
+                    <td class="label">Gender:</td>
+                    <td class="gender-group">
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">Date of Birth:</td>
+                    <td>
+                        <select name="dob_month" style="width: 30%;">
+                            <option value="">Month</option>
+                            <option value="1">Jan</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Apr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Aug</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                        </select>
+                        <select name="dob_date" style="width: 28%;">
+                            <option value="">Date</option>
+                            <script>
+                                for(let i=1; i<=31; i++) {
+                                    document.write('<option value="'+i+'">'+i+'</option>');
+                                }
+                            </script>
+                        </select>
+                        <select name="dob_year" style="width: 30%;">
+                            <option value="">Year</option>
+                            <script>
+                                for(let y=2026; y>=1950; y--) {
+                                    document.write('<option value="'+y+'">'+y+'</option>');
+                                }
+                            </script>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Contact & Account Info -->
+                <tr>
+                    <td class="label"><label for="email">E-mail:</label></td>
+                    <td><input type="email" id="email" name="email" placeholder="Enter E-mail...(EX:KHLEANGUDOM@ex.gov.com)"></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="phone">Phone Number:</label></td>
+                    <td><input type="tel" id="phone" name="phone_num" placeholder="Enter Phone...(EX:012345678)"></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="country">Country / Location:</label></td>
+                    <td><input type="text" id="country" name="location" placeholder="Enter Country or Location...(EX:copy link map give ...)"></td>
+                </tr>
+
+                <!-- Application Details -->
+                <tr>
+                    <td class="label"><label for="education">Education Level:</label></td>
+                    <td>
+                        <select id="education" name="Edu_level">
+                            <option value="">-- Select Education --</option>
+                            <option value="High School">High School</option>
+                            <option value="Bachelor">Bachelor Degree</option>
+                            <option value="Master">Master Degree</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="position">Position Apply:</label></td>
+                    <td><input type="text" id="position" name="POS" placeholder="Enter Position...(EX:Service...)"></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="photo">Photo:</label></td>
+                    <td><input type="file" id="photo" name="photo" accept="image/*"></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="cv">CV Document:</label></td>
+                    <td><input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx"></td>
+                </tr>
+
+                <!-- Security -->
+                <tr>
+                    <td class="label"><label for="pwd">Password:</label></td>
+                    <td><input type="password" id="pwd" name="password" placeholder="Enter Password..."></td>
+                </tr>
+
+                <tr>
+                    <td class="label"><label for="cpwd">Confirm Password:</label></td>
+                    <td><input type="password" id="cpwd" name="confirm_password" placeholder="Confirm Password..."></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="terms-cell">
+                        <input type="checkbox" id="terms" name="terms">
+                        <label for="terms">I agree to the Terms of Use</label>
+                    </td>
+                </tr>
+
+                <!-- Buttons -->
+                <tr>
+                    <td colspan="2" class="btn-area">
+                        <input type="submit" value="Submit" class="submit">
+                        <input type="reset" value="Cancel" class="cancel">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <!-- Footer -->
+        <footer>
+            <strong>រក្សាសិទ្ធិគ្រប់យ៉ាង © 2026 ៖ </strong> KHLEANG UDOM
+        </footer>
+    </div>
+
+</body>
+</html>
